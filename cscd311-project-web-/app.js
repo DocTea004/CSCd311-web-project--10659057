@@ -3,6 +3,10 @@ const PORT = 5000;
 const expressLayouts= require('express-ejs-layouts');
 
 const app= express();
+const db= require('./config/keys').MongoURI;
+
+mongoose.connect(db, {useNewUrlParser:true, useUnifiedTopology: true });
+
 
 //EJS
 app.use(expressLayouts);
